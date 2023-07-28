@@ -1,11 +1,7 @@
 import React from "react";
 
 function index() {
-  return (
-    <>
-      <p className="per">HOME</p>
-    </>
-  );
+  return <>Hola mundo</>;
 }
 
 export default index;

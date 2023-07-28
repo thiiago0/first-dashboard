@@ -3,6 +3,7 @@ import Barra from "./BarraHorizontal"; // export defualt
 import { BarraVertical as Vertical } from "./BarraVertical"; // sin export default // as -> alias ejemplo: { BarraVertical as Vertical }
 import Imagen from "./assets/Imagen/user.jpeg";
 import Logo from "./assets/Imagen/logo2.png";
+import contact from "./assets/Imagen/coon.png";
 
 import "./App.css";
 import Contacto from "./Contacto";
@@ -25,8 +26,8 @@ export const App = () => {
       <div className="box-2">
         <Barra userName={userName} urlimagen={Imagen} />
         <div className="home-container">
-          {/* <Home /> */}
-          <Contacto />
+          <Home />
+          {/* <Contacto Ulrcontact={contact} /> */}
         </div>
       </div>
     </section>

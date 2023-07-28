@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-
-const Contacto = () => {
+//props
+// const { Ulrcontact } = props
+const Contacto = ({ Ulrcontact }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
+  const [text, setText] = useState("");
 
   const handleChangeinput = (setState) => (e) => {
     setState(e.target.value);
@@ -15,16 +17,19 @@ const Contacto = () => {
       name,
       email,
       tel,
+      text,
     };
     console.log("objContact: ", objContact);
   };
 
   return (
     <form>
-      <h2>Contatanos:</h2>
-      <img src="" alt="" />
-      <div>
-        <label htmlFor="">Nombre</label>
+      <div className="inicio">
+        <img className="cont" src={Ulrcontact} alt="contact" />
+        <h2 className="h2-con">Contactanos:</h2>
+      </div>
+      <div className="primer">
+        <label htmlFor="Nombre">Nombre</label>
         <input
           onChange={handleChangeinput(setName)}
           required
@@ -34,8 +39,8 @@ const Contacto = () => {
           value={name}
         />
       </div>
-      <div>
-        <label htmlFor="">Correo</label>
+      <div className="email">
+        <label htmlFor="Correo">Correo</label>
         <input
           onChange={handleChangeinput(setEmail)}
           required
@@ -45,8 +50,8 @@ const Contacto = () => {
           value={email}
         />
       </div>
-      <div>
-        <label htmlFor="">Telefono</label>
+      <div className="phone">
+        <label htmlFor="Telefono">Telefono</label>
         <input
           onChange={handleChangeinput(setTel)}
           required
@@ -58,7 +63,20 @@ const Contacto = () => {
           value={tel}
         />
       </div>
-      <button onClick={handleClickEnviar} type="button">
+
+      <div className="description">
+        <label htmlFor="Description">Descripción</label>
+        <textarea
+          onChange={handleChangeinput(setText)}
+          required
+          type="text"
+          name="description"
+          id="Description"
+          value={text}
+        />
+      </div>
+
+      <button className="btn-contact" onClick={handleClickEnviar} type="button">
         Enviar
       </button>
     </form>
