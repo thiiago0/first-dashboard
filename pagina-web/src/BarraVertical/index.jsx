@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const BarraVertical = ({ menuOptions, Urlogo }) => {
   return (
@@ -9,11 +10,11 @@ export const BarraVertical = ({ menuOptions, Urlogo }) => {
       <div>
         <ul className="item-container">
           {menuOptions?.map((i) => (
-            <a key={i.id} href={i.enlace}>
-              <li>
+            <li key={i.id}>
+              <Link to={i.enlace}>
                 <strong>{i.nombre}</strong>
-              </li>
-            </a>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

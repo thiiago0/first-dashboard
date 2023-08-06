@@ -119,7 +119,7 @@ li {
 
 form {
   width: 500px;
-  height: 65vh;
+  height: 70vh;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -128,10 +128,20 @@ form {
   box-sizing: border-box;
   position: relative;
   justify-content: space-between;
+  color: black;
 }
 
-.home-container {
-  /* background-color: rgb(13, 86, 187); */
+.background-contacto {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(24, 128, 208);
+  display: grid;
+  place-content: center;
+}
+
+.views-container {
+  width: 100%;
+  height: calc(100% - 8vh);
 }
 
 input {
@@ -202,7 +212,7 @@ label {
 }
 
 .primer {
-  /* margin-top: 100px; */
+  margin-top: 5vw;
 }
 
 h2 {

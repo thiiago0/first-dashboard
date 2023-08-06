@@ -1,0 +1,20 @@
+.pokedex-container {
+  background-color: black;
+  height: 100%;
+  overflow: auto;
+}
+
+.pokemons-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.animate__animated {
+  color: red;
+  padding: 20px;
+  font-family: cursive;
+}

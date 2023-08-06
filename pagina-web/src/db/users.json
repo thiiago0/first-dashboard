@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nombre": "John Smith",
+    "nombre_usuario": "johnny123"
+  },
+  {
+    "id": 2,
+    "nombre": "Emily Johnson",
+    "nombre_usuario": "emilyj"
+  },
+  {
+    "id": 3,
+    "nombre": "Michael Williams",
+    "nombre_usuario": "mike_will"
+  },
+  {
+    "id": 4,
+    "nombre": "Sophia Brown",
+    "nombre_usuario": "sophie_b"
+  },
+  {
+    "id": 5,
+    "nombre": "William Davis",
+    "nombre_usuario": "will_d"
+  },
+  {
+    "id": 6,
+    "nombre": "Olivia Garcia",
+    "nombre_usuario": "olivia_g"
+  },
+  {
+    "id": 7,
+    "nombre": "James Martinez",
+    "nombre_usuario": "james_m"
+  },
+  {
+    "id": 8,
+    "nombre": "Ava Robinson",
+    "nombre_usuario": "avarob"
+  },
+  {
+    "id": 9,
+    "nombre": "Ethan Clark",
+    "nombre_usuario": "ethan_c"
+  },
+  {
+    "id": 10,
+    "nombre": "Isabella Lee",
+    "nombre_usuario": "isabella_l"
+  },
+  {
+    "id": 11,
+    "nombre": "Mason Hall",
+    "nombre_usuario": "mason_h"
+  },
+  {
+    "id": 12,
+    "nombre": "Abigail Turner",
+    "nombre_usuario": "abby_turn"
+  },
+  {
+    "id": 13,
+    "nombre": "Alexander Hernandez",
+    "nombre_usuario": "alex_h"
+  },
+  {
+    "id": 14,
+    "nombre": "Charlotte Phillips",
+    "nombre_usuario": "char_phil"
+  },
+  {
+    "id": 15,
+    "nombre": "Daniel Flores",
+    "nombre_usuario": "danny_f"
+  },
+  {
+    "id": 16,
+    "nombre": "Emma Scott",
+    "nombre_usuario": "emma_s"
+  },
+  {
+    "id": 17,
+    "nombre": "Henry Murphy",
+    "nombre_usuario": "henry_m"
+  },
+  {
+    "id": 18,
+    "nombre": "Grace Hill",
+    "nombre_usuario": "grace_h"
+  },
+  {
+    "id": 19,
+    "nombre": "Jacob Ward",
+    "nombre_usuario": "jacob_w"
+  },
+  {
+    "id": 20,
+    "nombre": "Lily Bennett",
+    "nombre_usuario": "lily_b"
+  }
+]
