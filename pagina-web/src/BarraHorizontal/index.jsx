@@ -1,6 +1,6 @@
 import React from "react";
 
-const Horizontal = ({ userName, urlimagen }) => {
+const Horizontal = ({ userName = "", urlimagen = "" }) => {
   return (
     <nav className="navHorizontal">
       <div className="contenedor-horizontal">

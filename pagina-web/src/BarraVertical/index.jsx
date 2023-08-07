@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const BarraVertical = ({ menuOptions, Urlogo }) => {
+export const BarraVertical = ({ menuOptions = [], Urlogo = "" }) => {
   return (
     <aside className="contenedor-izq">
       <div className="picture">
