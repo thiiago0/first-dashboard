@@ -71,7 +71,7 @@ export const App = () => {
           <div className="box-2">
             <Barra userName={nombreUsuario} urlimagen={Imagen} />
             <div className="views-container">
-              <Router />
+              <Router isLogged={isLogged} />
             </div>
           </div>
         </section>
