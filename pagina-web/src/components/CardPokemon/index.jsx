@@ -9,7 +9,7 @@ export const CardPokemon = ({ name, id }) => {
   });
 
   const { moves, sprites } = pokemon;
-  const movesToShow = moves.slice(0, 2); // Obtener solo los dos primeros movimientos
+  const movesToShow = moves.slice(0, 3); // Obtener solo los dos primeros movimientos
 
   useEffect(() => {
     const getPokemon = async () => {

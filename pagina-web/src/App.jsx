@@ -1,4 +1,4 @@
-import Barra from "./BarraHorizontal"; // export defualt
+import Horizontal from "./BarraHorizontal"; // export defualt
 import { BarraVertical as Vertical } from "./BarraVertical"; // sin export default // as -> alias ejemplo: { BarraVertical as Vertical }
 import Imagen from "./assets/Imagen/user.jpeg";
 import Logo from "./assets/Imagen/logo2.png";
@@ -9,11 +9,13 @@ import { users } from "./db/users.json";
 import "./App.css";
 import { Router } from "./Router";
 import { useState } from "react";
+import { useToggleIsOpen } from "./hooks/useToggleIsOpen";
 
 export const App = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [mensaje, setMensaje] = useState(""); // estado -> depende de como queras inicializar el estado
+  const { isCartOpen, toggleCart } = useToggleIsOpen();
 
   const handleChangeInput = (e) => {
     setNombreUsuario(e.target.value);
@@ -69,7 +71,12 @@ export const App = () => {
             <Vertical menuOptions={options} Urlogo={Logo} />
           </div>
           <div className="box-2">
-            <Barra userName={nombreUsuario} urlimagen={Imagen} />
+            <Horizontal
+              userName={nombreUsuario}
+              urlimagen={Imagen}
+              isCartOpen={isCartOpen}
+              toggleCart={toggleCart}
+            />
             <div className="views-container">
               <Router isLogged={isLogged} />
             </div>
