@@ -7,7 +7,7 @@ import Producto from "../Producto";
 import { Pokedex } from "../Pokedex";
 // import { Pokedex2 } from "../Pokedex";
 
-export const Router = ({ isLogged }) => {
+export const Router = ({ isLogged, addProduct }) => {
   return (
     <>
       <Routes>
@@ -15,7 +15,10 @@ export const Router = ({ isLogged }) => {
           <>
             <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contacto />} />
-            <Route path="/producto" element={<Producto />} />
+            <Route
+              path="/producto"
+              element={<Producto addProduct={addProduct} />}
+            />
             <Route path="/pokedex" element={<Pokedex />} />
             {/* <Route path="/pokedex2" element={<Pokedex2 />} /> */}
             {/* <Route path='/[MyRuta]' element={<MyComponent/>}/> */}
@@ -23,6 +26,7 @@ export const Router = ({ isLogged }) => {
         ) : (
           <>
             <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate to="/login" />} />
             {/* <Route path="**" element={<Home />} /> */}
           </>
         )}

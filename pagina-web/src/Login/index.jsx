@@ -6,7 +6,6 @@ const Login = ({ handleChangeInput, handleLogin, nombreUsuario, mensaje }) => {
     <div className="card-login">
       <div className="ime-login">
         <img className="img-log" src={log} alt="" />
-        {/* <h1>Login</h1> Cambiarlo por una imagen */}
       </div>
       <form className="login-form" onSubmit={handleLogin}>
         <label>
@@ -16,6 +15,8 @@ const Login = ({ handleChangeInput, handleLogin, nombreUsuario, mensaje }) => {
             value={nombreUsuario}
             onChange={handleChangeInput}
             placeholder="User name:"
+            minLength="2"
+            required={nombreUsuario}
           />
         </label>
         <button className="btn-log" type="submit">

@@ -3,48 +3,29 @@ import { BarraVertical as Vertical } from "./BarraVertical"; // sin export defau
 import Imagen from "./assets/Imagen/user.jpeg";
 import Logo from "./assets/Imagen/logo2.png";
 import Login from "./Login";
-import Swal from "sweetalert2";
+
 import { users } from "./db/users.json";
 
 import "./App.css";
 import { Router } from "./Router";
-import { useState } from "react";
 import { useToggleIsOpen } from "./hooks/useToggleIsOpen";
+import { useAddDeleteCar } from "./hooks/useAddDeleteCar";
+import { useIsLogged } from "./hooks/useIsLogged";
+import { useButton } from "./hooks/useButton";
 
 export const App = () => {
-  const [isLogged, setIsLogged] = useState(true);
-  const [nombreUsuario, setNombreUsuario] = useState("");
-  const [mensaje, setMensaje] = useState(""); // estado -> depende de como queras inicializar el estado
-  const { isCartOpen, toggleCart } = useToggleIsOpen();
-
-  const handleChangeInput = (e) => {
-    setNombreUsuario(e.target.value);
-  };
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    const user = users.find((user) => user.nombreUsuario === nombreUsuario);
-
-    if (user) {
-      Swal.fire({
-        title: "Success!",
-        text: "User correct",
-        icon: "success",
-        confirmButtonText: "Go to home",
-      });
-      setIsLogged(true); // aqui deberia poner el setIsLogged(true)
-      setMensaje("");
-    } else {
-      Swal.fire({
-        title: "Error!",
-        text: "Usuario no existe",
-        icon: "error",
-        confirmButtonText: "Cool",
-      });
-      setMensaje("El usuario no existe");
-    }
-  };
+  const { isCartOpen, toggleCart } = useToggleIsOpen(false); // estado -> depende de como queras inicializar el estado
+  const { addProduct, removeProduct, products } = useAddDeleteCar([]);
+  const { handleLogOut } = useIsLogged();
+  const { showButton, toggleButton } = useButton();
+  const {
+    isLogged,
+    mensaje,
+    handleLogin,
+    handleChangeInput,
+    setNombreUsuario,
+    nombreUsuario,
+  } = useIsLogged(users);
 
   let options = [
     { id: 1, nombre: "Inicio", enlace: "/" },
@@ -76,9 +57,15 @@ export const App = () => {
               urlimagen={Imagen}
               isCartOpen={isCartOpen}
               toggleCart={toggleCart}
+              removeProduct={removeProduct}
+              products={products}
+              handleLogOut={handleLogOut}
+              toggleButton={toggleButton}
+              showButton={showButton}
             />
+
             <div className="views-container">
-              <Router isLogged={isLogged} />
+              <Router isLogged={isLogged} addProduct={addProduct} />
             </div>
           </div>
         </section>

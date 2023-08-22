@@ -1,9 +1,4 @@
-import React, { useEffect } from "react";
-import { useAddDeleteCar } from "../hooks/useAddDeleteCar";
-
-const CarritoItem = ({ id, nameProduct, quantity, price }) => {
-  const { removeProduct } = useAddDeleteCar();
-
+const CarritoItem = ({ removeProduct, id, nameProduct, quantity, price }) => {
   return (
     <li className="lista-carrito-item" key={id}>
       {nameProduct} - Cantidad: {quantity} - Subtotal: ${quantity * price}

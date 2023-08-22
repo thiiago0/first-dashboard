@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import CarritoItem from "../carritoItems";
 
-const Carrito = ({ cartItems = [], cartTotal }) => {
+const Carrito = ({ removeProduct, cartItems = [], cartTotal }) => {
+  console.log("Carrito: ", cartItems);
   return (
     <div className="carrito">
       {cartItems.length === 0 ? (
@@ -16,6 +16,7 @@ const Carrito = ({ cartItems = [], cartTotal }) => {
                 nameProduct={item.nameProduct}
                 quantity={item.quantity}
                 price={item.price}
+                removeProduct={removeProduct}
               />
             ))}
           </ul>

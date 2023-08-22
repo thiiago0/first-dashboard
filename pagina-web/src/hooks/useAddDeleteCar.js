@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
 
-export const useAddDeleteCar = () => {
-  const [products, setProducts] = useState([]);
-  const [newProduct, setNewProduct] = useState([]);
+export const useAddDeleteCar = (initialState) => {
+  const [products, setProducts] = useState(initialState);
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
     setProducts(storedProducts);
   }, []); // Este efecto solo se ejecuta al montar el componente
-
-  useEffect(() => {
-    const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
-    setNewProduct(storedProducts);
-  }, [products]); // Este efecto solo se ejecuta al montar el componente
 
   const addProduct = (newProduct) => {
     const existingProduct = products.find(
@@ -61,5 +55,5 @@ export const useAddDeleteCar = () => {
     }
   };
 
-  return { newProduct, addProduct, removeProduct };
+  return { products, addProduct, removeProduct };
 };

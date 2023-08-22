@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles.css";
 // import nike from "../assets/Imagen/nike.png";
-import { useAddDeleteCar } from "../hooks/useAddDeleteCar";
 
-const Producto = () => {
+const Producto = ({ addProduct }) => {
   const data = [
     {
       id: 7,
@@ -28,8 +27,6 @@ const Producto = () => {
       img: "./src/assets/Imagen/adidas.jpeg",
     },
   ];
-
-  const { addProduct } = useAddDeleteCar();
 
   return (
     <div className="container-items">
