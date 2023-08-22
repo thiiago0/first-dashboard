@@ -5,7 +5,7 @@ import Login from "../Login";
 import Contacto from "../Contacto";
 import Producto from "../Producto";
 import { Pokedex } from "../Pokedex";
-// import { Pokedex2 } from "../Pokedex";
+import { Navigate } from "react-router-dom";
 
 export const Router = ({ isLogged, addProduct }) => {
   return (
@@ -26,7 +26,7 @@ export const Router = ({ isLogged, addProduct }) => {
         ) : (
           <>
             <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="*" element={<Navigate to="/login" replace={true} />} />
             {/* <Route path="**" element={<Home />} /> */}
           </>
         )}

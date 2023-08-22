@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-
+import { useNavigate } from "react-router-dom";
 export const useIsLogged = (users) => {
   const initialState = localStorage.getItem("isLogged") || false;
+  const initialUsernameState = localStorage.getItem("user") || "";
+
   const [isLogged, setIsLogged] = useState(initialState);
   const [mensaje, setMensaje] = useState("");
-  const [nombreUsuario, setNombreUsuario] = useState("");
+  const [nombreUsuario, setNombreUsuario] = useState(initialUsernameState);
+  const navigate = useNavigate();
 
   const handleChangeInput = (e) => {
     setNombreUsuario(e.target.value);
@@ -53,6 +56,8 @@ export const useIsLogged = (users) => {
         setIsLogged(false);
         setNombreUsuario("");
         setMensaje("");
+        navigate("/login");
+        window.location.reload(); // forzando el reload de la pagina
       }
     });
   };

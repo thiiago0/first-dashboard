@@ -1,6 +1,5 @@
 import Carrito from "../Carrito";
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Horizontal = ({
   userName,
@@ -32,12 +31,13 @@ const Horizontal = ({
         />
         {showButton && (
           <div className="user-message">
-            <Link to="/login" onClick={handleLogOut}>
-              <button className="btn-logout"> Log Out</button>
-            </Link>
+            <button className="btn-logout" onClick={handleLogOut}>
+              {" "}
+              Log Out
+            </button>
           </div>
         )}
-        {products.length > 0 && (
+        {products.length >= 0 && (
           <div className="carrito-icon" onClick={toggleCart}>
             <p className="texto-carrito">
               <span className="material-symbols-outlined">shopping_cart</span>
